@@ -1,4 +1,4 @@
-let user = {
+const user = {
     name: "Иван",
     age: 30,
     gender: "male",
@@ -13,7 +13,7 @@ let user = {
     }
 };
 
-let userClone = copyObject(user);
+const userClone = copyObject(user);
 
 console.log ("********************");
 console.log (`Родительский объект`);  
