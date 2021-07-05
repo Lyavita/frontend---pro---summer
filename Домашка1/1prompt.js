@@ -5,3 +5,5 @@ alert(`Hi, ${nameUser}. JS rules!!!`);
 
 // alert(`Hi, ${prompt('Представьтесь, будьте добры!', 'Саша')}. JS rules!!!`);
 
+// ля ля ля
+
