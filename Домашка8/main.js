@@ -20,7 +20,6 @@ console.log (`Родительский объект`);
 console.log (user);
 console.log ("********************");
 
-
 userClone.name = "Пётр"; 
 userClone.parametrs.handParametrs.length = 65;
 
