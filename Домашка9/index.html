@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <script src="functions.js" defer></script>
-    <script src="script1.js" async></script>
+    <!-- <script src="functions.js" defer></script>
+    <script src="script1.js" async></script> -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="container">
@@ -56,5 +56,48 @@
         <td><span id="summ">TOTAL:</span></td>
       </tr>
     </table>
+    
+      <script>
+        let elem = document.querySelectorAll('[data-id]');
+        const el = elem.length;
+
+    console.log(el) ;
+    count = 0;
+elem.forEach(function (el, index, list) {
+    console.log(el.innerHTML);
+    let d = el.innerHTML;
+    console.log(typeof d);
+    let e = d.split('');
+    console.log(e);
+
+
+    for (let i = 0; i < e.length; i++) {
+ if (e[i] === 'B') {
+   e[i] = '000000000';
+  } else if (e[i] === 'M') {
+   e[i] = '000000';
+  }
+
+    };
+
+    e = e.join('');
+
+    console.log(e);
+    let b = +e;
+  count = count + b;
+        
+});
+console.log(count);
+
+let sum = document.querySelector('#summ');
+console.log(sum) ;
+console.log(sum.innerHTML);
+sum.innerHTML += ' ' + count;
+console.log(sum.innerHTML);
+
+alert(summ.textContent);
+alert(summ.textContent + "ddd");
+      </script>
+    
   </body>
 </html>
