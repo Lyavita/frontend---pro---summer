@@ -4,20 +4,16 @@ function taskOne() {
 }
 
 function taskTwo(attr) {
-    let elems = document.getElementsByTagName('*');
+    let elems = document.querySelectorAll(attr);
     for (let i = 0; i < elems.length; i++) {
-        if (elems[i].hasAttribute(attr)) {
-            elems[i].removeAttribute(attr);
-        }
+        elems[i].removeAttribute(attr);
     }
 }
 
 function taskThree(attr) {
-    let elems = document.getElementsByTagName('*');
+    let elems = document.querySelectorAll(attr);
     for (let i = 0; i < elems.length; i++) {
-        if (elems[i].hasAttribute(attr)) {
-            elems[i].setAttribute("style", "background: palegreen");
-        }
+        elems[i].setAttribute("style", "background: palegreen");
     }
 }
 
@@ -27,7 +23,7 @@ function taskFore() {
 }
 
 function taskFive() {
-    let allTr = Array.from(document.querySelectorAll('tbody > tr'));
+    let allTr = document.querySelectorAll('tbody > tr');
     let lastTr = allTr[allTr.length - 2];
     let dopTr = lastTr.cloneNode(true);
     dopTr.firstElementChild.textContent = 'OneMoreCompany';
