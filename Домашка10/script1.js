@@ -22,7 +22,7 @@ function taskThree(attr) {
 }
 
 function taskFore() {
-    let badTr = document.querySelector('table').firstElementChild.firstElementChild.nextElementSibling;
+    let badTr = document.querySelectorAll('tr')[1];
     badTr.remove();
 }
 
