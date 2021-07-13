@@ -27,7 +27,8 @@ function taskFore() {
 }
 
 function taskFive() {
-    let lastTr = document.querySelector('#summ').parentElement.parentElement.previousElementSibling;
+    let allTr = Array.from(document.querySelectorAll('tbody > tr'));
+    let lastTr = allTr[allTr.length - 2];
     let dopTr = lastTr.cloneNode(true);
     dopTr.firstElementChild.textContent = 'OneMoreCompany';
     dopTr.firstElementChild.nextElementSibling.textContent = 'OneMoreMen';
