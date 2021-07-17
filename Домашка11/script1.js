@@ -14,7 +14,7 @@ function putToList(task) {
 
 }
 
-function removeTask(n) { 
+function removeTask(n) {  
     list.removeChild(n);
 }
 function gggt(d) {
