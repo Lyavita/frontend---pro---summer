@@ -23,7 +23,7 @@ function taskFore() {
 }
 
 function taskFive() {
-    let allTr = document.querySelectorAll('tbody > tr');
+    let allTr = document.querySelectorAll('tbody > tr'));
     let lastTr = allTr[allTr.length - 2];
     let dopTr = lastTr.cloneNode(true);
     dopTr.firstElementChild.textContent = 'OneMoreCompany';
