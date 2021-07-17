@@ -2,7 +2,7 @@ let oneMoreTask = document.querySelector('#input-list');
 let list = document.querySelector('#todo-list');
 
 function putToList(task) {
-    if (task.value == "") {
+    if (task.value == "") { 
         alert("Введите Очень Важное Дело, пожалуйста");
     } else {
         let nextTask = document.createElement("li");
