@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+  font-family: 'Lobster', cursive;
+}
+
+.color-will {
+  color: rgb(177, 65, 31); 
+}
+
+.color-did {
+  color: rgb(22, 163, 29); 
+}
+
+#btn-input-list {
+  display: flex;	
+	box-sizing: border-box;
+	padding: 0 5px;
+	outline: none;
+	border: 1px solid #5a1632; 
+	border-radius: 15px;
+	line-height: 38px;
+	font-size: 14px;
+	font-weight: 400;
+	text-decoration: none;
+	color: #752222;
+	background-color: rgb(224, 189, 189);
+	cursor: pointer;
+	user-select: none;
+	appearance: none;
+	touch-action: manipulation;  
+  margin-top: 30px;
+}
+
+#btn-input-list:focus {
+	box-shadow: 0 0 0 3px rgb(108 117 125 / 50%);
+}
+#btn-input-list:hover {
+	color: rgb(74, 109, 19);
+	background-color: #9cf3aa;
+	border-color: #6c757d;
+}
+#btn-input-list:active {
+	color: #fff;
+	background-color: #6c757d;
+	border-color: #6c757d;
+}
+
+#label-input-list {
+  display: flex;
+}
+
+#input-list {
+  width: 70%;
+  margin-top: 30px;
+}
