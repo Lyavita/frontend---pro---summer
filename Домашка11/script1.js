@@ -13,7 +13,7 @@ function putToList(task) {
         nextTask.classList.add("li-task");
         list.appendChild(nextTask);
         task.value = "";
-        nextTask.addEventListener("click", () => switchTaskStatus(nextTask));
+        nextTask.addEventListener("click", () => switchTaskStatus(nextTask, delTask));
 
         delTask.classList.add("button-del");
         delTask.textContent = "Удалить задание";
@@ -27,7 +27,12 @@ function removeTask(task, btn) {
     list.removeChild(btn);
 }
 
-function switchTaskStatus(task) {
+function switchTaskStatus(task, btn) {
     task.classList.toggle("color-will");
     task.classList.toggle("color-did");
+    if (task.classList.contains("color-did")) {
+        btn.textContent = "Удалить задание (задание выполнено)";
+    } else {
+        btn.textContent = "Удалить задание (задание еще не выполнено)";
+    }
 }
