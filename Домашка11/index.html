@@ -12,17 +12,14 @@
 
 
 <body>
-    <div class="substrate">
-      <div class="forma">
-       <h1>Список Важных Дел</h1>
-   
-    <form name="form-list" method="post" action="input.php">
-    <label id = "label-input-list" for="input-list">Очередное Важное Дело:</label>
-    <textarea id = "input-list" size="100" name="task" placeholder="Итак, ты должен..."></textarea>
-    <input id = "btn-input-list" type="button" value="Внести в список Важных Дел" onclick="putToList(oneMoreTask)">
-    <ul id = "todo-list"></ul>
-    </div>
-     </div>
- </form>
-  </body>
+    <div class="container">
+      <h1>Список Важных Дел</h1>
+        <form name="form-list" method="post" action="input.php">
+            <label id="label-input-list" for="input-list">Очередное Важное Дело:</label>
+            <textarea id="input-list" size="100" name="task" placeholder="Итак, ты должен..."></textarea>
+            <input id="btn-input-list" type="button" value="Внести в список Важных Дел" onclick="putToList(oneMoreTask)">
+        </form>    
+      <ul id="todo-list"></ul>  
+    </div> 
+</body>
 </html>

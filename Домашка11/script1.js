@@ -1,34 +1,33 @@
-function putToList(task) {
-    let nextTask = document.createElement("li");
-    let delTask = document.createElement("button");
-    nextTask.setAttribute("class", "color-will");
-    nextTask.textContent = task.value;
-    list.appendChild(nextTask);
-    nextTask.appendChild(delTask);
-    task.value = "";
-    nextTask.addEventListener('click', () => gggt(nextTask));
-    delTask.addEventListener('click', () => removeTask(nextTask));
-    // delTask.onclick = function () {
-    //     delTask.parentElement.delete();
-    // }
-
-}
-
-function removeTask(n) {  
-    list.removeChild(n);
-}
-function gggt(d) {
-    d.classList.toggle('color-will');
-    d.classList.toggle('color-did');
-}
-
-
-// nextTask.classList.toggle('color1');
-let lii = document.querySelectorAll('li');
-lii.forEach(liii => console.log(liii));
-
-
-
 let oneMoreTask = document.querySelector('#input-list');
 let list = document.querySelector('#todo-list');
-console.log(btn);
+
+function putToList(task) {
+    if (task.value == "") {
+        alert("Введите Очень Важное Дело, пожалуйста");
+    } else {
+        let nextTask = document.createElement("li");
+        let delTask = document.createElement("button");
+
+        nextTask.setAttribute("class", "color-will");
+        nextTask.textContent = task.value;
+        nextTask.classList.add("li-task");
+        list.appendChild(nextTask);
+        task.value = "";
+        nextTask.addEventListener('click', () => switchTaskStatus(nextTask));
+
+        delTask.classList.add("button-del");
+        delTask.textContent = "Удалить задание";
+        list.appendChild(delTask);
+        delTask.addEventListener('click', () => removeTask(nextTask, delTask));
+    }
+}
+
+function removeTask(task, btn) {
+    list.removeChild(task);
+    list.removeChild(btn);
+}
+
+function switchTaskStatus(task) {
+    task.classList.toggle('color-will');
+    task.classList.toggle('color-did');
+}

@@ -1,56 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 * {
-  font-family: 'Lobster', cursive;
+	font-family: 'Lobster', cursive;
+}
+
+body {
+	color: rgb(0, 0, 0); 
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 800px;
 }
 
 .color-will {
-  color: rgb(177, 65, 31); 
+  	background-color: rgba(241, 48, 34, 0.2); 
 }
 
 .color-did {
-  color: rgb(22, 163, 29); 
+  	background-color: rgb(114, 224, 119, 0.2); 
 }
 
 #btn-input-list {
-  display: flex;	
+  	display: flex;	
 	box-sizing: border-box;
 	padding: 0 5px;
 	outline: none;
-	border: 1px solid #5a1632; 
+	border: 3px solid rgb(0, 0, 0, 0.2);  
 	border-radius: 15px;
 	line-height: 38px;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 400;
 	text-decoration: none;
-	color: #752222;
-	background-color: rgb(224, 189, 189);
+	background-color: rgb(224, 39, 39, 0.5);
 	cursor: pointer;
 	user-select: none;
 	appearance: none;
 	touch-action: manipulation;  
-  margin-top: 30px;
+  	margin-top: 10px;
+  	box-shadow: 15px 15px 15px rgba(154, 147, 140, 0.5);
 }
 
 #btn-input-list:focus {
 	box-shadow: 0 0 0 3px rgb(108 117 125 / 50%);
 }
+
 #btn-input-list:hover {
-	color: rgb(74, 109, 19);
-	background-color: #9cf3aa;
-	border-color: #6c757d;
+	background-color: rgb(114, 224, 119, 0.2); 
 }
+
 #btn-input-list:active {
-	color: #fff;
-	background-color: #6c757d; 
-	border-color: #6c757d;
+	background-color: rgba(79, 126, 82, 0.2); 
 }
  
 #label-input-list {
-  display: flex;
+  	display: flex;
 }
 
 #input-list {
-  width: 70%;
-  margin-top: 30px;
+	width: 100%;
+	margin-top: 30px;
+}
+
+#todo-list {
+	max-width: 100%;
+}
+
+.li-task {
+	margin-top: 15px;
+	list-style-position: inside;
+	border-radius: 15px;
+	box-shadow: 15px 15px 15px rgba(154, 147, 140, 0.5);
+}
+
+.button-del {
+	display: block;
+	margin-top: 10px;
+	box-sizing: border-box;
+	padding: 5px;
+	outline: none;
+	border: 1px solid rgb(0, 0, 0, 0.2); 
+	border-radius: 15px;
+	font-size: 12px;
+	font-weight: 400;
+ 	background-color: rgb(224, 39, 39, 0.5);
+	box-shadow: 15px 15px 15px rgba(154, 147, 140, 0.5);
+	cursor: pointer;
+}
+
+.button-del:hover {
+	background-color: rgba(114, 224, 119, 0.2); 
+}
+
+.button-del:active {
+	background-color: rgba(79, 126, 82, 0.2); 
 }
