@@ -14,11 +14,11 @@ body {
 }
 
 .color-will {
-  	background-color: rgba(241, 48, 34, 0.2); 
+  	background-color: rgba(220, 241, 27, 0.4); 
 }
 
 .color-did {
-  	background-color: rgb(114, 224, 119, 0.2); 
+  	background-color: rgb(114, 224, 119, 0.4); 
 }
 
 #btn-input-list {
