@@ -1,13 +1,20 @@
-let btnDelAttr = document.getElementById("removeAttrBtn");
-btnDelAttr.addEventListener("click", removeAttribute, false);
+document.addEventListener("DOMContentLoaded", changeFontSize);git
 
-let greenBtn = document.getElementById("setGreenBtn");
-greenBtn.addEventListener("click", paintGreen, true);
+window.addEventListener("load", function () {
+    let btnDelAttr = document.getElementById("removeAttrBtn");
+    btnDelAttr.addEventListener("click", removeAttribute, false);
 
-let oneMoreRowBtn = document.getElementById("addRowBtn");
-oneMoreRowBtn.addEventListener("click", addRow);
+    let greenBtn = document.getElementById("setGreenBtn");
+    greenBtn.addEventListener("click", paintGreen, true);
 
-let delRowBtn = document.getElementById("removeSecondRowBtn");
-delRowBtn.addEventListener("click", removeRow);
+    let oneMoreRowBtn = document.getElementById("addRowBtn");
+    oneMoreRowBtn.addEventListener("click", addRow);
 
-document.addEventListener("DOMContentLoaded", changeFontSize);
+    let delRowBtn = document.getElementById("removeSecondRowBtn");
+    delRowBtn.addEventListener("click", removeRow);
+});
+
+
+
+
+

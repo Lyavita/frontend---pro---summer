@@ -21,21 +21,21 @@ function paintGreen(event) {
 }
 
 function addRow() {
-    let allTr = document.querySelectorAll('tbody > tr');
+    let allTr = document.querySelectorAll("tbody > tr");
     let lastTr = allTr[allTr.length - 2];
     let dopTr = lastTr.cloneNode(true);
-    dopTr.firstElementChild.textContent = 'OneMoreCompany';
-    dopTr.firstElementChild.nextElementSibling.textContent = 'OneMoreMen';
-    dopTr.lastElementChild.textContent = 'googol';
+    dopTr.firstElementChild.textContent = "OneMoreCompany";
+    dopTr.firstElementChild.nextElementSibling.textContent = "OneMoreMen";
+    dopTr.lastElementChild.textContent = "googol";
     lastTr.after(dopTr);
 }
 
 function removeRow() {
-    let badTr = document.querySelectorAll('tr')[1];
+    let badTr = document.querySelectorAll("tr")[1];
     badTr.remove();
 }
 
 function changeFontSize() {
     let headerTitle = document.getElementById("title");
-    headerTitle.setAttribute('style', "font-size: 24px;");
+    headerTitle.setAttribute("style", "font-size: 24px;");
 }
