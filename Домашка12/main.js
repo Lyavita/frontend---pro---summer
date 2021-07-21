@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", changeFontSize);git
+document.addEventListener("DOMContentLoaded", changeFontSize);
 
 window.addEventListener("load", function () {
     let btnDelAttr = document.getElementById("removeAttrBtn");
