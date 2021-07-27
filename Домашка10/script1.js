@@ -7,6 +7,7 @@ function taskTwo(attr) {
     let elems = document.querySelectorAll(attr);
     for (let i = 0; i < elems.length; i++) {
         elems[i].removeAttribute(attr);
+        console.log(elems[i]);
     }
 }
 
