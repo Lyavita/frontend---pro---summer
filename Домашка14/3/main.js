@@ -1,20 +1,6 @@
-document.addEventListener("DOMContentLoaded", changeFontSize);
-
-window.addEventListener("load", function () {
-    let btnDelAttr = document.getElementById("removeAttrBtn");
-    btnDelAttr.addEventListener("click", removeAttribute, false);
-
-    let greenBtn = document.getElementById("setGreenBtn");
-    greenBtn.addEventListener("click", paintGreen, true);
-
-    let oneMoreRowBtn = document.getElementById("addRowBtn");
-    oneMoreRowBtn.addEventListener("click", addRow);
-
-    let delRowBtn = document.getElementById("removeSecondRowBtn");
-    delRowBtn.addEventListener("click", removeRow);
-});
-
-
-
-
+let counterInitialValue = document.getElementById("initial-value");
+// let divNewCounter = document.getElementById("new-counter");
+let documentWrapper = document.getElementById("container");
+let btnCreateCounter = document.getElementById("btn-create-counter");
+btnCreateCounter.addEventListener("click", createCounter);
 

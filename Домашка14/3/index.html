@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <script src="script1.js" defer></script>
-    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src = "script1.js" defer></script>
+    <script src = "main.js" defer></script>
+
   </head>
   <body>
-  </body>
+    <div class = "container" id = "container">
+      <header>ПОСЧИТАЙ!</header>
+      <form id = "input-form" action = "handler.php">
+      <label id = "label-initial-value" for = "initial-value">Введите начальное значение:</label>
+      <input type = "number" id = "initial-value" name="num" value="0">
+      </form>
+      <div id = "btn-create-counter"><span id = "b">Создать счетчик</span></div>
+      <!-- <div id = "new-counter"></div> -->
+    </div>
+</body>
 </html>

@@ -1,41 +1,18 @@
-function changeYear() {
-    let inputYear = document.getElementById("yearBtn").previousElementSibling;
-    let year = document.getElementById("title").firstElementChild;
-    year.textContent = inputYear.value;
-    inputYear.value = "";
-}
+// let g = [[1, 2, 3], [4, 5], [6]];
 
-function removeAttribute() {
-    let elems = document.querySelectorAll("[my-attribute]");
-    for (let i = 0; i < elems.length; i++) {
-        elems[i].removeAttribute("my-attribute");
-    }
-}
+// let sum = 0;
 
-function paintGreen(event) {
-    event.stopPropagation();
-    let elems = document.querySelectorAll("[data-id]");
-    for (let i = 0; i < elems.length; i++) {
-        elems[i].setAttribute("style", "background: palegreen");
-    }
-}
+// for (let i = 0; i < g.length; i++) {
+//     for (let j = 0; j < g[i].length; j++) {
 
-function addRow() {
-    let allTr = document.querySelectorAll("tbody > tr");
-    let lastTr = allTr[allTr.length - 2];
-    let dopTr = lastTr.cloneNode(true);
-    dopTr.firstElementChild.textContent = "OneMoreCompany";
-    dopTr.firstElementChild.nextElementSibling.textContent = "OneMoreMen";
-    dopTr.lastElementChild.textContent = "googol";
-    lastTr.after(dopTr);
-}
+//         sum = sum + g[i][j];
+//     }
+// }
 
-function removeRow() {
-    let badTr = document.querySelectorAll("tr")[1];
-    badTr.remove();
-}
+// console.log(sum);
 
-function changeFontSize() {
-    let headerTitle = document.getElementById("title");
-    headerTitle.setAttribute("style", "font-size: 24px;");
-}
+let g = [[1, 2, 3], [4, 5], [6]];
+let sumArray = g.flat(Infinity).reduce((total, amount) => total + amount)
+console.log(sumArray);
+
+
