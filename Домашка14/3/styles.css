@@ -2,106 +2,82 @@
 
 body {
   font-family: 'Press Start 2P', cursive;
- 
 }
-
-
 
 .container {
   margin: 0 auto;
   max-width: 800px;
- min-height: 100vh;
+  min-height: 100vh;
   display: grid;
-  
   grid-template-areas:
     'header header'
     'input-form btn';
-  grid-template-columns: 1fr, 3fr;
- grid-template-rows: 70px, 1fr, 30px; 
-  gap: 2% 2%;
+  gap: 15px 2%;
   background-image: url(https://kartinkin.com/uploads/posts/2021-01/thumbs/1611081065_8-p-fon-dlya-prezentatsii-tsifri-11.jpg);
-  
-
 }
 
 header {
-  
+  grid-area: header;
+  width: 100%;
+  margin: 0;
+  padding-top: 3%;
   color: rgb(139, 28, 28);
   text-shadow: 1px 1px 2px black, 0 0 1em rgb(175, 167, 167);
-  grid-area: header;
   font-size: calc(35px + 16 * (100vw / 1280));
- 
-width: 100%;
-
-margin: 0;
-padding-top: 3%;
-text-align: center;
+  text-align: center;
 }
 
 #input-form {
-  border: 1px solid #dddddd;
-  border-radius: 15px;
   grid-area: input-form;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-   font-size: calc(16px + 16 * (100vw / 1280));
-
-  
-
+  font-size: calc(16px + 16 * (100vw / 1280));
+  border: 1px solid #dddddd;
+  border-radius: 15px;
 }
 
 #label-initial-value {
   grid-area: label;
   cursor: pointer;
-  
 }
 
 #initial-value {
   grid-area: input;
-  cursor: pointer;
   width: 70%;
- font-family: 'Press Start 2P', cursive;
- font-size: calc(16px + 16 * (100vw / 1280));
-padding: 20px 0;
-box-shadow: 0 0 10px rgba(0,0,0,0.5);
-border-radius: 15px;
-
+  padding: 20px 0;
+  font-family: 'Press Start 2P', cursive;
+  font-size: calc(16px + 16 * (100vw / 1280));
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
 }
 
 #btn-create-counter {
-   border: 1px solid #dddddd;
+  grid-area: btn;
+  width: 90%;
+  padding: 0 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  grid-area: btn;
-  padding: 0 10px;
   justify-self: end;
-cursor: pointer;
-width: 90%;
-font-family: 'Press Start 2P', cursive;
-text-align: center;
-
-
-font-size: calc(16px + 16 * (100vw / 1280));
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  border: 1px solid #dddddd;
+  font-size: calc(16px + 16 * (100vw / 1280));
   background-color: rgba(170, 170, 189, 0.5);
   color: rgb(139, 28, 28);
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   border-radius: 15px;
-    
-    
-    
 }
 
-#new-counter {
-  
-}
-
-.yy {
+.new-counter {
+   min-height: 35px;
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
-   
    grid-column-start: 1;
    grid-column-end: 3;
    border: 1px solid #dddddd;
@@ -109,55 +85,24 @@ font-size: calc(16px + 16 * (100vw / 1280));
    font-size: calc(7px + 16 * (100vw / 1280));
 }
 
-
-.ff {
+.new-counter-text {
  width: auto;
 } 
 
-.dd {
+.new-counter-count {
+  width: 33%;
   background-color: rgb(17, 245, 245, 0.2);
   border-radius: 15px;
   cursor: pointer;
-  width: 33%;
   font-size: calc(11px + 16 * (100vw / 1280));
-text-align: center;
+  text-align: center;
 }
 
-.gg {
-  background-color: rgb(145, 90, 161);
+.new-counter-btn {
+  background-color: rgba(172, 18, 18, 0.3);
   border-radius: 15px;
   cursor: pointer;
   width: 34%;
   justify-self: end;
-}
-
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td,
-th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-
-.buttons-container {
-  padding-top: 10px;
-  /* width: 50%; */
-}
-
-input {
-  max-width: 200px;
-}
-
-input~button {
-  margin-left: 5px;
+  text-align: center;
 }
