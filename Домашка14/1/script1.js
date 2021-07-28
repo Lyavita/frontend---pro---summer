@@ -1,15 +1,15 @@
-let a = 5;
-let b = 10;
-let e = {};
+let variable = 5;
+let arrLentgh = 10;
+let array = [];
 
 function arrayFill(q, w) {
 
     for (let i = 0; i < w; i++) {
-        e[i] = q;
+        array[i] = q;
     }
 
-    return e;
+    return array;
 }
-arrayFill(a, b);
+arrayFill(variable, arrLentgh);
 
-console.log(e);
+console.log(array);
