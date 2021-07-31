@@ -3,12 +3,10 @@ const calc = new CreateCalculator(10);
 function CreateCalculator(b) {
 
     this.b = b;
-
     this.sum = function (q) {
         this.b = this.b + q;
         return this.b;
     };
-
     this.mult = function (q) {
         this.b = this.b * q;
         return this.b;
