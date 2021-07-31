@@ -20,7 +20,7 @@ function CreateCalculator(b) {
         return this.b;
     };
     this.set = function (q) {
-        this.b = q
+        this.b = q;
         return this.b;
     };
 };
