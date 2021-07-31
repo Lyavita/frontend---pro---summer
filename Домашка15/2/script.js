@@ -23,7 +23,7 @@ function CreateCalculator(b) {
         this.b = q
         return this.b;
     };
-}
+};
 
 console.log(calc.sum(5));
 console.log(calc.mult(10));
