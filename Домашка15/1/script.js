@@ -4,25 +4,25 @@ const user = {
     getFullName: function () {
         return console.log(this.firstName + ' ' + this.secondName);
     }
-}
-user.getFullName()
+};
+user.getFullName();
 
 const secondUser = {
     firstName: "Steve",
-    secondName: "Jobs",
-}
+    secondName: "Jobs"
+};
 user.getFullName.call(secondUser);
 
 const thirdUser = {
     firstName: "Steve",
     secondName: "Wozniak "
-}
+};
 user.getFullName.apply(thirdUser);
 
 const fourthUser = {
     firstName: "Julia ",
     secondName: "Roberts"
-}
+};
 let newGetFullName = user.getFullName.bind(fourthUser);
 newGetFullName();
 
