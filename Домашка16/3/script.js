@@ -1,10 +1,11 @@
 function Student(name, arrMarks) {
     this.name = name;
+    this.arrMarks = arrMarks;
     this.sayHi = function () {
         console.log(`Hi, bro. I'm ${this.name}`);
     };
     this.averageMark = function () {
-        console.log(arrMarks.reduce((total, mark) => total + mark) / arrMarks.length);
+        console.log(this.arrMarks.reduce((total, mark) => total + mark) / this.arrMarks.length);
     };
 }
 
