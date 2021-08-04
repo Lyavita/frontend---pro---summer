@@ -5,7 +5,6 @@ function Student(name, arrMarks) {
     };
     this.averageMark = function () {
         console.log(arrMarks.reduce((total, mark) => total + mark) / arrMarks.length);
-
     };
 }
 
