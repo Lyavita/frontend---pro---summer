@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
+  </head>
 
-<body onload="checkCookie()">
+  <body onload="setTimeN();">
     <div id="wrapper">
-        <div id=clockBox></div>
+      <div id="clockbox">
+        <div id="clockbox_hours" class="glow-box">
+          <span id="hours"></span>
+        </div>
+        <div id="clockbox_minuts" class="glow-box">
+          <span id="minuts"></span>
+        </div>
+        <div id="clockbox_seconds">
+          <span id="seconds" class="glow-text"></span>
+        </div>
+      </div>
+      <div id="datebox">
+        <div id="datebox_month" class="glow-text"><span id="month"></span></div>
+        <div id="datebox_year" class="glow-text"><span id="year"></span></div>
+        <div id="datebox_day" class="glow-text"><span id="day"></span></div>
+      </div>
     </div>
-</body>
+  </body>
+</html>
