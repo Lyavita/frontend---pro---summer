@@ -95,6 +95,17 @@ body {
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
 }
 
+#datebox_day-week {
+  display: flex;
+  margin-top: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  border-radius: 38px 146px 25px 133px / 119px 118px 0px 38px;
+  text-align: center;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
+}
+
 #datebox_month {
   display: flex;
   justify-content: center;
