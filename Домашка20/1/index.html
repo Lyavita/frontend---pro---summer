@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+    <h1>Заказ товаров</h1>
+    <div id='input-items'>
+      <div class='input-item'> 
+        <label for="input-name">Наименование</label>
+        <input id="input-name" name="itemName" placeholder="IPhone">
+      </div>
+      <div class= 'input-item'> 
+        <label for="input-price">Цена</label>
+        <input id="input-price" name="itemPrice" placeholder="100">
+      </div>
+      <div class= 'input-item'> 
+        <label for="input-quantity">Количество</label>
+        <input id="input-quantity" name="itemQuantity" placeholder="1">
+      </div>
+      <input id="btn-input-list" type="button" value="В список">
+    </div>   
+
+  <table id="my-table" onclick="deleteItemFromList(event)">
+      <thead>
+        <tr>
+          <th>Наименование</th>
+          <th>Количество</th>
+          <th>Цена</th>
+          <th>Действия</th>
+        </tr>
+      </thead>
+      <tbody id="my-table-tbody"> 
+        <template id="productrow">
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <input class ="button-del" type="button" value="Удалить">
+            </td>
+          </tr>
+        </template>
+          <tfoot>
+          <tr>
+            <td colspan="3"><b>Сумма вашего заказа</b></td>
+            <td id="my-table-summ"></td>
+          </tr>
+        </tfoot>
+      </tbody>
+    </table>
+  </div> 
+</body>
+</html>
