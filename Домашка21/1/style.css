@@ -14,14 +14,14 @@ body {
 }
 
 .color-will {
-  	background-color: rgba(220, 241, 27, 0.4); 
+  	background-color: rgba(241, 70, 27, 0.4); 
 }
 
 .color-did {
-  	background-color: rgb(114, 224, 119, 0.4); 
+  	background-color: rgba(55, 185, 61, 0.4); 
 }
 
-#btn-input-list {
+#btn-load-todos {
   	display: flex;	
 	box-sizing: border-box;
 	padding: 0 5px;
@@ -32,7 +32,7 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 	text-decoration: none;
-	background-color: rgb(224, 39, 39, 0.5);
+	background-color: rgba(167, 168, 240, 0.5);
 	cursor: pointer;
 	user-select: none;
 	appearance: none;
@@ -41,15 +41,15 @@ body {
   	box-shadow: 15px 15px 15px rgba(154, 147, 140, 0.5);
 }
 
-#btn-input-list:focus {
+#btn-load-todos:focus {
 	box-shadow: 0 0 0 3px rgb(108 117 125 / 50%);
 }
 
-#btn-input-list:hover {
+#btn-load-todos:hover {
 	background-color: rgb(114, 224, 119, 0.2); 
 }
 
-#btn-input-list:active {
+#btn-load-todos:active {
 	background-color: rgba(79, 126, 82, 0.2); 
 }
  
@@ -83,13 +83,12 @@ body {
 	border-radius: 15px;
 	font-size: 12px;
 	font-weight: 400;
- 	background-color: rgb(224, 39, 39, 0.5);
-	box-shadow: 15px 15px 15px rgba(154, 147, 140, 0.5);
+ 	box-shadow: 15px 15px 15px rgba(154, 147, 140, 0.5);
 	cursor: pointer;
 }
 
 .button-del:hover {
-	background-color: rgba(114, 224, 119, 0.2); 
+	background-color: rgba(114, 174, 224, 0.2); 
 }
 
 .button-del:active {
