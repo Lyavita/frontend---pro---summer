@@ -2,41 +2,43 @@ const urlToDos = "https://jsonplaceholder.typicode.com/todos";
 const list = document.querySelector("#todo-list");
 const btnLoadToDos = document.querySelector("#btn-load-todos");
 let countToDoPosition = trigger();
-btnLoadToDos.addEventListener("click", () => countToDoPosition(putToList, urlToDos, switchTaskStatus, removeTask));
+btnLoadToDos.addEventListener("click", () => countToDoPosition(onLoadToDosClick, urlToDos));
 
 function trigger() {
   let clicks = 0;
-  return function(funcMain, url, func1, func2) {
+  return function(func, url) {
     ++clicks;
-    funcMain(url, clicks, func1, func2);
+    func(url, clicks);
   }
 }
 
-function putToList(url, pos, funcForTaskClick, funcForTaskBtnClick) {
+function onLoadToDosClick(url, clicksss) { 
   fetch(url)
     .then(res => res.json())
-    .then(function (data) {
-      let title = data[pos].title;
-      let status = data[pos].completed;
-      let nextTask = document.createElement("li");
-      let delTask = document.createElement("button");
-      if (status) {
-          nextTask.setAttribute("class", "color-did");
-          delTask.setAttribute("class", "color-did");
-          delTask.textContent = "Удалить задание (задание выполнено)";
-      } else {
-          nextTask.setAttribute("class", "color-will");
-          delTask.setAttribute("class", "color-will");
-          delTask.textContent = "Удалить задание (задание еще не выполнено)";
-      }
-      nextTask.textContent = title;
-      nextTask.classList.add("li-task");
-      nextTask.addEventListener("click", () => funcForTaskClick(nextTask, delTask));
-      list.appendChild(nextTask);
-      delTask.classList.add("button-del");
-      delTask.addEventListener("click", () => funcForTaskBtnClick(nextTask, delTask));
-      list.appendChild(delTask);
-    })
+    .then(data => putToList(data, clicksss, switchTaskStatus, removeTask))
+  }
+      
+  function putToList(dataFromServer, pos, funcForTaskClick, funcForTaskBtnClick) {      
+    let title = dataFromServer[pos].title;
+    let status = dataFromServer[pos].completed;
+    let nextTask = document.createElement("li");
+    let delTask = document.createElement("button");
+    if (status) {
+        nextTask.setAttribute("class", "color-did");
+        delTask.setAttribute("class", "color-did");
+        delTask.textContent = "Удалить задание (задание выполнено)";
+    } else {
+        nextTask.setAttribute("class", "color-will");
+        delTask.setAttribute("class", "color-will");
+        delTask.textContent = "Удалить задание (задание еще не выполнено)";
+    }
+    nextTask.textContent = title;
+    nextTask.classList.add("li-task");
+    nextTask.addEventListener("click", () => funcForTaskClick(nextTask, delTask));
+    list.appendChild(nextTask);
+    delTask.classList.add("button-del");
+    delTask.addEventListener("click", () => funcForTaskBtnClick(nextTask, delTask));
+    list.appendChild(delTask);
 }
 
 function removeTask(task, btn) {

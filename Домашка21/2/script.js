@@ -18,32 +18,32 @@ function switchTaskStatus(task, btn) {
 
 let urlToDos = "https://jsonplaceholder.typicode.com/todos";
 
-let count = 0;
-
 function putToList(url) {
-    count++;
     fetch(url)
         .then(res => res.json())
         .then(function (data) {
-            let yy = data[count].title;
-            let gg = data[count].completed;
-            console.log(yy);
-
-
-let nextTask = document.createElement("li");
-            let delTask = document.createElement("button");
-            if (gg) {
-nextTask.setAttribute("class", "color-will");}
-        nextTask.textContent = yy;
-     nextTask.classList.add("li-task");
-       list.appendChild(nextTask);
-       
- nextTask.addEventListener("click", () => switchTaskStatus(nextTask, delTask));
-
-        delTask.classList.add("button-del");
-         delTask.textContent = "Удалить задание";
-        list.appendChild(delTask);
-        delTask.addEventListener("click", () => removeTask(nextTask, delTask));
-
+            
+            console.log(data[1]);
+            console.log(typeof data);
         })
+   
+
+
+
+// let nextTask = document.createElement("li");
+//             let delTask = document.createElement("button");
+//             if (gg) {
+// nextTask.setAttribute("class", "color-will");}
+//         nextTask.textContent = yy;
+//      nextTask.classList.add("li-task");
+//        list.appendChild(nextTask);
+       
+//  nextTask.addEventListener("click", () => switchTaskStatus(nextTask, delTask));
+
+//         delTask.classList.add("button-del");
+//          delTask.textContent = "Удалить задание";
+//         list.appendChild(delTask);
+//         delTask.addEventListener("click", () => removeTask(nextTask, delTask));
+
+        // })
 }
