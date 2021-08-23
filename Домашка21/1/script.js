@@ -2,23 +2,24 @@ const urlToDos = "https://jsonplaceholder.typicode.com/todos";
 const list = document.querySelector("#todo-list");
 const btnLoadToDos = document.querySelector("#btn-load-todos");
 let countToDoPosition = trigger();
-btnLoadToDos.addEventListener("click", () => countToDoPosition(onLoadToDosClick, urlToDos));
+btnLoadToDos.addEventListener("click", () => countToDoPosition(urlToDos));
 
 function trigger() {
   let clicks = 0;
-  return function(func, url) {
+  return function(url) {
     ++clicks;
-    func(url, clicks);
+    onLoadToDosClick(url, clicks);
   }
 }
 
-function onLoadToDosClick(url, clicksss) { 
+function onLoadToDosClick(url, clicks) { 
   fetch(url)
     .then(res => res.json())
-    .then(data => putToList(data, clicksss, switchTaskStatus, removeTask))
+    .then(data => putToList(data, clicks))
   }
       
-  function putToList(dataFromServer, pos, funcForTaskClick, funcForTaskBtnClick) {      
+function putToList(dataFromServer, pos) {
+    let dataId = dataFromServer.id;
     let title = dataFromServer[pos].title;
     let status = dataFromServer[pos].completed;
     let nextTask = document.createElement("li");
@@ -32,12 +33,13 @@ function onLoadToDosClick(url, clicksss) {
         delTask.setAttribute("class", "color-will");
         delTask.textContent = "Удалить задание (задание еще не выполнено)";
     }
+    nextTask.setAttribute("data-id", `${dataId}`);
     nextTask.textContent = title;
     nextTask.classList.add("li-task");
-    nextTask.addEventListener("click", () => funcForTaskClick(nextTask, delTask));
+    nextTask.addEventListener("click", () => switchTaskStatus(nextTask, delTask));
     list.appendChild(nextTask);
     delTask.classList.add("button-del");
-    delTask.addEventListener("click", () => funcForTaskBtnClick(nextTask, delTask));
+    delTask.addEventListener("click", () => removeTask(nextTask, delTask));
     list.appendChild(delTask);
 }
 
