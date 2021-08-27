@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="script.js" async></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Что там с погодой?</h1>
+      <form name="form" method="post" action="input.php">
+        <label for="input-city-field">Город (на русском языке):</label>
+        <input id="input-city-field" type="text" />
+        <label for="#input-country-field1">Страна:</label>
+        <input type="text" list="country-value" id="input-country-field1" />
+        <datalist id="country-value">
+          <option value="AF">Afghanistan</option>
+          <option value="AX">Åland Islands</option>
+          <option value="DZ">Algeria</option>
+          <option value="UA">Ukraine</option>
+          <option value="US">United States</option>
+        </datalist>
+        <input id="btn-load-weather" type="button" value="Поехали.." />
+      </form>
+      <ul id="todo-list"></ul>
+    </div>
+  </body>
+</html>
