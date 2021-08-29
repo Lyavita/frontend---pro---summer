@@ -5,28 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <script src="function.js" defer></script>
     <script src="script.js" async></script>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <div class="container">
-      <h1>Что там с погодой?</h1>
-      <form name="form" method="post" action="input.php">
-        <label for="input-city-field">Город (на русском языке):</label>
-        <input id="input-city-field" type="text" />
-        <label for="#input-country-field1">Страна:</label>
-        <input type="text" list="country-value" id="input-country-field1" />
-        <datalist id="country-value">
-          <option value="AF">Afghanistan</option>
-          <option value="AX">Åland Islands</option>
-          <option value="DZ">Algeria</option>
-          <option value="UA">Ukraine</option>
-          <option value="US">United States</option>
-        </datalist>
+      <header>Что там с погодой?</header>
+      <form id="form-input" name="form" method="post" action="input.php">
+        <div id="form-input-city">
+          <label for="input-city-field">Город (на русском языке):</label>
+          <input id="input-city-field" type="text" />
+        </div>
+        <div id="form-input-country">
+          <label for="#input-country-field">Страна:</label>
+          <input type="text" list="country-value" id="input-country-field" />
+          <datalist id="country-value">
+            <option value="AF">Afghanistan</option>
+            <option value="AX">Åland Islands</option>
+            <option value="DZ">Algeria</option>
+            <option value="UA">Ukraine</option>
+            <option value="US">United States</option>
+          </datalist>
+        </div>
         <input id="btn-load-weather" type="button" value="Поехали.." />
       </form>
-      <ul id="todo-list"></ul>
+
+      <div id="weather">
+        <div id="date" class="weather-string"></div>
+        <div id="city-name" class="weather-string"></div>
+        <div id="temp" class="weather-string"></div>
+        <div id="clouds-img" class="weather-string"></div>
+        <div id="clouds" class="weather-string"></div>
+      </div>
+
+      <div id="grad">
+        <table id="table-grad">
+          <tr>
+            <td class="summer table-grad-td">40</td>
+          </tr>
+          <tr>
+            <td class="summer table-grad-td">30</td>
+          </tr>
+          <tr>
+            <td class="summer table-grad-td">20</td>
+          </tr>
+          <tr>
+            <td class="summer table-grad-td">10</td>
+          </tr>
+          <tr>
+            <td class="winter table-grad-td">0</td>
+          </tr>
+          <tr>
+            <td class="winter table-grad-td">10</td>
+          </tr>
+          <tr>
+            <td class="winter table-grad-td">20</td>
+          </tr>
+          <tr>
+            <td class="winter table-grad-td">30</td>
+          </tr>
+        </table>
+        <div id="term">
+          <div id="term-real"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
