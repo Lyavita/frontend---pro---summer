@@ -11,23 +11,6 @@ function createUrl() {
     }
 }
 
-function reverceKtoC(tempK) {
-    let tempCel = tempK - 273.15;
-    return tempCel;
-}
-
-function changeTempDegree(tempCel) {
-    term.setAttribute("style", `height:${40 * 3.28 + (tempCel) * 3.28}px`);
-}
-
-function loadWeather(dat) {
-    cityName.textContent = dat.name;
-    temp.textContent = `${reverceKtoC(dat.main.temp).toFixed()}C${String.fromCharCode(176)}`;
-    changeTempDegree(reverceKtoC(dat.main.temp));
-    clouds.textContent = dat.weather[0]["description"];
-    cloudsImg.innerHTML = '<img src="http://openweathermap.org/img/wn/' + dat.weather[0]['icon'] + '@2x.png">';
-}
-
 function searchCity(url) {
     fetch(url)
         .then(res => res.json())
@@ -40,6 +23,23 @@ function searchCity(url) {
             }
         })
         .catch(err => alert(err.message))
+}
+
+function loadWeather(dat) {
+    cityName.textContent = dat.name;
+    temp.textContent = `${reverceKtoC(dat.main.temp).toFixed()}C${String.fromCharCode(176)}`;
+    changeTempDegree(reverceKtoC(dat.main.temp));
+    clouds.textContent = dat.weather[0]["description"];
+    cloudsImg.innerHTML = '<img src="http://openweathermap.org/img/wn/' + dat.weather[0]['icon'] + '@2x.png">';
+}
+
+function reverceKtoC(tempK) {
+    let tempCel = tempK - 273.15;
+    return tempCel;
+}
+
+function changeTempDegree(tempCel) {
+    term.setAttribute("style", `height:${40 * 3.28 + (tempCel) * 3.28}px`);
 }
 
 function checkCityValuesEmpty(a) {
