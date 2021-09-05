@@ -55,7 +55,7 @@ class Calculator {
           this.resultNum= this.#oldNum - this.#theNum;
           break;
       case "times":
-          this.resultNum= this.oldNum * this.theNum;
+          this.resultNum= this.#oldNum * this.#theNum;
           break;
       case "divided by":
           this.resultNum= this.#oldNum / this.#theNum;
