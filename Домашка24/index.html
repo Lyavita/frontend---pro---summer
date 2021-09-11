@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="game-container">
+        <div id="tiles" class="tiles-container">Press Start game</div>
+        <button class="control-panel" onclick="initGame();">Start game</button>
+      </div>
+    </main>
+    <style>
+      :root {
+        --tile-size: 70px;
+      }
+      #win {
+        margin-bottom: 30px;
+        font-size: 3rem;
+        font-weight: 900;
+        text-align: center;
+        color: rgb(201, 28, 15);
+      }
+      .main {
+        padding-top: 30px;
+        width: 100vh;
+        height: 100vh;
+        margin: 0 auto;
+      }
+      .game-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        height: 100%;
+        align-items: center;
+      }
+      .tiles-container {
+        margin: 0 auto;
+        width: calc(var(--tile-size) * 4 + 24px);
+        display: flex;
+        flex-wrap: wrap;
+        outline: 9px solid lightskyblue;
+        font-size: 23px;
+        font-weight: 700;
+        box-shadow: 5px 5px 10px rgba(200, 140, 200, 0.7);
+        color: blueviolet;
+      }
+      .tiles-container_finish {
+        animation: finish 4s infinite alternate ease-out;
+      }
+      .control-panel {
+        width: 100px;
+        box-shadow: 5px 5px 10px rgba(200, 140, 200, 0.7);
+      }
+      .tile {
+        height: var(--tile-size);
+        width: var(--tile-size);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid black;
+        border-radius: 5px;
+      }
+      .counter {
+        padding: 5px;
+        background-color: rgb(116, 230, 192);
+        border: 3px solid black;
+        box-shadow: 5px 5px 10px rgba(200, 140, 200, 0.7);
+        border-radius: 5px;
+      }
+      .counter_more-than-100 {
+        background-color: rgb(222, 230, 116);
+      }
+      .counter_more-than-200 {
+        background-color: rgb(230, 148, 116);
+      }
+      .counter_more-than-300 {
+        background-color: rgb(158, 28, 28);
+      }
+
+      @keyframes finish {
+        50% {
+          background-color: rgb(108, 236, 91);
+          font-size: 40px;
+          color: #a2ee14;
+        }
+        100% {
+          background-color: rgb(236, 91, 110);
+          font-size: 60px;
+          color: #ee2d14;
+        }
+      }
+    </style>
+  </body>
+</html>
