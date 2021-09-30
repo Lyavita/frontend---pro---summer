@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+* {
+  font-family: "Rampart One", cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+  color: rgb(226, 222, 222);
+  font-size: 1.2rem;
+}
+
+#container {
+ box-sizing: border-box;
+  /* background-image: url("wallpaper.jpg"); */
+  background-color: rgba(11, 115, 201, 0.3);
+  display: grid;
+  grid-template-rows: auto auto auto auto 1fr;
+  grid-template-columns: 20% 1fr;
+  grid-template-areas:
+  "bye bye"
+  "ask ask"
+  "greet-block greet-block"
+    ". header"
+    ". form";
+  margin: 0 auto;
+  gap: 20px;
+  max-width: 687px;
+  padding: 20px;
+}
+
+
+
+header {
+  grid-area: header;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+#form-login {
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+#input-nikname {
+  display: flex;
+  flex-direction: column;
+}
+
+#greet-block {
+  display: none;
+  grid-area: greet-block;
+}
+
+#btn-login {
+  box-sizing: border-box;
+  padding: 0 5px;
+  outline: none;
+  border: 3px solid rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: rgba(11, 115, 201, 0.3);
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;
+  margin-top: 10px;
+  box-shadow: 15px 15px 15px rgba(154, 147, 140, 0.5);
+  color: #c0c0c0;
+}
+
+#btn-login:focus {
+  box-shadow: 0 0 0 3px rgb(108 117 125 / 50%);
+}
+
+#btn-login:hover {
+  filter: brightness(150%);
+}
+
+#btn-login:active {
+  filter: brightness(250%);
+}
+
+#btn-enter-chat {
+  box-sizing: border-box;
+  padding: 0 5px;
+  outline: none;
+  border: 3px solid rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: rgba(11, 115, 201, 0.3);
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;
+  margin-top: 10px;
+  box-shadow: 15px 15px 15px rgba(154, 147, 140, 0.5);
+  color: #c0c0c0;
+}
+
+#btn-reload-user {
+  box-sizing: border-box;
+  padding: 0 5px;
+  outline: none;
+  border: 3px solid rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: rgba(11, 115, 201, 0.3);
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;
+  margin-top: 10px;
+  box-shadow: 15px 15px 15px rgba(154, 147, 140, 0.5);
+  color: #c0c0c0;
+}
+
+#btn-exit-user {
+  box-sizing: border-box;
+  padding: 0 5px;
+  outline: none;
+  border: 3px solid rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: rgba(11, 115, 201, 0.3);
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;
+  margin-top: 10px;
+  box-shadow: 15px 15px 15px rgba(154, 147, 140, 0.5);
+  color: #c0c0c0;
+}
+
+#btn-exit-user:focus {
+  box-shadow: 0 0 0 3px rgb(108 117 125 / 50%);
+}
+
+#btn-exit-user:hover {
+  filter: brightness(150%);
+}
+
+#btn-exit-user:active {
+  filter: brightness(250%);
+}
+
+#byebye {
+  grid-area: bye;
+  display: none;
+  text-align: center;
+  background-color: rgb(236, 161, 161);
+  color: rgb(121, 7, 7);
+  border: 1px;
+  border-radius: 13px;
+  font-size: 2rem;
+  font-weight: 800;
+  box-shadow: -4px 0 4px -2px rgba(214, 214, 214, 1);
+}
+
+#block-ask-login-filling {
+  grid-area: ask;
+  display: none;
+  text-align: center;
+  background-color: rgb(236, 161, 161);
+  color: rgb(121, 7, 7);
+  border: 1px;
+  border-radius: 13px;
+  font-size: 2rem;
+  font-weight: 800;
+  box-shadow: -4px 0 4px -2px rgba(214, 214, 214, 1);
+}
+
+#greet {
+  text-align: center;
+  background-color: rgb(236, 161, 161);
+  color: rgb(121, 7, 7);
+  border: 1px;
+  border-radius: 13px;
+  font-size: 2rem;
+  font-weight: 800;
+  box-shadow: -4px 0 4px -2px rgba(214, 214, 214, 1);
+}
+
+#wrapper-chat-block {
+  box-sizing: border-box;
+  max-width: 80%;
+  margin: 0 auto;
+  display: none;
+ 
+  height: 100vh;
+}
+
+#bbb {
+  position: fixed;
+  bottom: 0;
+}
+
+#chat-block {
+  border: solid 5vh;
+  box-sizing: content-box;
+height: 90vh;
+  /* overflow: scroll; */
+  display: grid;
+  grid-template-rows: 1fr 30%;
+  grid-template-columns: 30% auto;
+  grid-template-areas:
+    "users messages"
+    "users message";
+    
+}
+
+#users-block {
+  /* position: fixed; */
+  /* bottom: 0px;
+ top: 0px;
+ left: 500px;
+ right: 50%; */
+  grid-area: users;
+  background-color: rgb(236, 161, 161);
+  overflow: scroll;
+}
+
+#messages-block {
+  /* position: relative; */
+  
+  grid-area: messages;
+  background-color: rgb(11, 122, 58);
+  overflow: scroll;
+
+}
+
+#write-message-block {
+  /* position: fixed;
+  bottom: 0px; */
+  overflow: scroll;
+  grid-area: message;
+  background-color: rgb(43, 24, 24);
+}
+
+@media (max-width: 600px) {
+  #form-login {
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+  }
+
+  #container {
+    padding: 20px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "form"
+      "greet-block";
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  header {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+}
