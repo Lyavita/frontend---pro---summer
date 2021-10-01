@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", checkLocalStorage);
-
+let newMessages = [];
+ 
 const container= document.getElementById('container');
 const formUserLogin = document.getElementById('form-login');
 const btnUserLogin = document.getElementById('btn-login');

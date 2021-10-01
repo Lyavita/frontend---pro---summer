@@ -25,5 +25,33 @@ let socket = new WebSocket("wss://fep-app.herokuapp.com/");
       }
       messages.append(p1);
       messages.append(p2);
-    }
+      console.log(event.data);
+     
+      newMessages.push(event.data);
+      localStorage.setItem('messages', JSON.stringify(newMessages));
+//       if (localStorage['messages']) {
+//         newMessages = JSON.parse(localStorage.getItem("messages"));
+//         console.log(typeof newMessages);
+//         // newMessages = newMessages.push(event.data);
+//         localStorage.setItem('messages', JSON.stringify(newMessages));
+//       } else {
+//         // localStorage.setItem('messages', JSON.stringify(event.data));
+//         // newMessages[0] = event.data;
+// newMessages = JSON.parse(localStorage.getItem("messages"));
+//         console.log(typeof newMessages);
+
+//       }
+      
+
+//       console.log(localStorage.getItem('messages'));
+//       console.log(JSON.parse(localStorage.getItem('messages')));
+      // let nnn = JSON.parse(localStorage.getItem('messages'));
+//       console.log(nnn);
+      // nnn.push(event.data);
+//       console.log(nnn);
+//       localStorage.setItem('messages', JSON.stringify(nnn));
+      console.log(JSON.parse(localStorage.getItem("messages")));
+}
+    
+
 
