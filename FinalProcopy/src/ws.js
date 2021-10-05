@@ -27,11 +27,9 @@ export function createNewConnection() {
   }
  
   socket.onopen = function (e) {
-    //  setTimeout(() => {  
-      oldMsg.forEach(function (item) {
-      writeMsgToMsgblock(item);
-      });
-    // }, 0);
+    oldMsg.forEach(function (item) {
+    writeMsgToMsgblock(item);
+    });
     let msgEnter = new Obj("message", "", `${localStorage.getItem('username')} вошел в чат`);
     socket.send(JSON.stringify(msgEnter));
 
@@ -40,7 +38,7 @@ export function createNewConnection() {
   socket.onclose = function(evt) {
     if (evt.code !== 1000) {
         checkCheckbox();
-      }
+    }
   }
 }
  
@@ -50,13 +48,22 @@ function writeMsgToMsgblock(parseObj) {
   let p2 = document.createElement('p');
   p1.textContent = username;
   p2.textContent = JSON.parse(parseObj).payload.message;
-  if (p1.textContent == `${localStorage.getItem('username')}`) {
-    p1.style.color = 'red';
-    p2.style.color = 'red';
+  if (username == `${localStorage.getItem('username')}`) {
+    p1.style.color = '#5194DB';
+    p2.style.color = "#66AEF2";
+    p1.style.margin = `0 0 0 30px`;
+    p2.style.margin = `0 0 20px 30px`;
+  } else if (username == '') {
+    p2.style.color = "#E8E2CF";
+    p2.style.margin = "0 0 20px 0";
+  } else {p1.style.color = '#9A93DB';
+    p2.style.color = "#D4A9F5";
+    p2.style.margin = "0 0 20px 0";
   }
+  
   messages.append(p1);
   messages.append(p2);
-
+  
   let h = messages.scrollHeight;
   messages.scrollTop = h;
     

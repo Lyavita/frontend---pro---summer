@@ -10,7 +10,7 @@
 
 body {
   box-sizing: border-box;
-  color: rgb(226, 222, 222);
+  color: rgb(247, 228, 228);
   font-size: 1.2rem;
 }
 
@@ -172,7 +172,6 @@ header {
 
 #chat-block {
   grid-area: messages;
-  border: solid 5vh;
   box-sizing: content-box;
   height: 90vh;
   display: grid;

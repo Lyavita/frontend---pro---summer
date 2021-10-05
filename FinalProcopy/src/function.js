@@ -4,10 +4,7 @@ import { Obj } from './script';
 
 export function checkLocalStorage() {
   if (localStorage.getItem('username')) {
-  greetBlock.style.display = "block";
-  formUserLogin.style.display = "none";  
-  greeting.textContent = `Hi, ${localStorage.getItem('username')}`;
-  header.style.display = 'none';
+    goToChat();
   }
 }
 
@@ -56,6 +53,9 @@ export function goToChat() {
 export function exitFromChat() {
   chatBlockWrapper.style.display = 'none';
   container.style.display = 'block';
+  header.style.margin = '20px 20px 20px 50px';
+  formUserLogin.style.margin = '20px 20px 20px 50px';
+  
 }
 
 export function closeSocket() {
