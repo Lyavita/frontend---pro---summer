@@ -15,11 +15,15 @@ body {
 }
 
 #container {
- box-sizing: border-box;
-  /* background-image: url("wallpaper.jpg"); */
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-image: url("https://media.rusability.ru/wp-content/uploads/2019/02/v-telegram-poyavilis-novye-vozmozhnosti-dlya-raboty-s-fonami-chatov.jpg");
+  background-repeat: repeat-y;
   background-color: rgba(11, 115, 201, 0.3);
   display: grid;
-  grid-template-rows: auto auto auto auto 1fr;
+  grid-template-rows: repeat(3, 30px) 1fr 1fr;
   grid-template-columns: 20% 1fr;
   grid-template-areas:
   "bye bye"
@@ -27,17 +31,12 @@ body {
   "greet-block greet-block"
     ". header"
     ". form";
-  margin: 0 auto;
   gap: 20px;
-  max-width: 687px;
-  padding: 20px;
 }
-
-
 
 header {
   grid-area: header;
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: bold;
 }
 
@@ -60,7 +59,6 @@ header {
 }
 
 #btn-login {
-  box-sizing: border-box;
   padding: 0 5px;
   outline: none;
   border: 3px solid rgb(0, 0, 0, 0.2);
@@ -109,7 +107,31 @@ header {
   color: #c0c0c0;
 }
 
+#btn-send-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+  box-sizing: border-box;
+ 
+  outline: none;
+  border: 3px solid rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: rgba(11, 115, 201, 0.3);
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;
+  box-shadow: 15px 15px 15px rgba(154, 147, 140, 0.5);
+  color: #c0c0c0;
+ 
+}
+
 #btn-reload-user {
+width: 34%;
   box-sizing: border-box;
   padding: 0 5px;
   outline: none;
@@ -123,9 +145,54 @@ header {
   user-select: none;
   appearance: none;
   touch-action: manipulation;
-  margin-top: 10px;
+  margin: 0;
+  padding: 0;
   box-shadow: 15px 15px 15px rgba(154, 147, 140, 0.5);
   color: #c0c0c0;
+}
+
+#btn-checkbox{
+  width: 33%;
+  box-sizing: border-box;
+  padding: 0 5px;
+  outline: none;
+  border: 3px solid rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: rgba(11, 115, 201, 0.3);
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;
+  margin: 0;
+  padding: 0;
+  box-shadow: 15px 15px 15px rgba(154, 147, 140, 0.5);
+  color: #c0c0c0;
+}
+
+
+#btn-exit-user-from-chat {
+ width: 33%;
+  box-sizing: border-box;
+  padding: 0 5px;
+  outline: none;
+  border: 3px solid rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: rgba(11, 115, 201, 0.3);
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;
+  
+  box-shadow: 15px 15px 15px rgba(154, 147, 140, 0.5);
+  color: #c0c0c0;
+  margin: 0;
+  padding: 0;
 }
 
 #btn-exit-user {
@@ -163,7 +230,7 @@ header {
   grid-area: bye;
   display: none;
   text-align: center;
-  background-color: rgb(236, 161, 161);
+  /* background-color: rgb(236, 161, 161); */
   color: rgb(121, 7, 7);
   border: 1px;
   border-radius: 13px;
@@ -176,11 +243,11 @@ header {
   grid-area: ask;
   display: none;
   text-align: center;
-  background-color: rgb(236, 161, 161);
+  /* background-color: rgb(236, 161, 161); */
   color: rgb(121, 7, 7);
   border: 1px;
   border-radius: 13px;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 800;
   box-shadow: -4px 0 4px -2px rgba(214, 214, 214, 1);
 }
@@ -201,26 +268,35 @@ header {
   max-width: 80%;
   margin: 0 auto;
   display: none;
- 
   height: 100vh;
+ 
 }
 
-#bbb {
-  position: fixed;
-  bottom: 0;
+#function-btn {
+  box-sizing: border-box;
+  grid-area: funcBtn;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  justify-content: stretch;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
 }
 
 #chat-block {
+ 
   border: solid 5vh;
   box-sizing: content-box;
 height: 90vh;
   /* overflow: scroll; */
   display: grid;
-  grid-template-rows: 1fr 30%;
+  grid-template-rows: 1fr 30% auto;
   grid-template-columns: 30% auto;
   grid-template-areas:
     "users messages"
-    "users message";
+    "users message"
+    "funcBtn funcBtn";
     
 }
 
@@ -244,12 +320,22 @@ height: 90vh;
 
 }
 
+#input-message {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: aqua;
+  resize: none;
+}
+
 #write-message-block {
   /* position: fixed;
   bottom: 0px; */
   overflow: scroll;
   grid-area: message;
-  background-color: rgb(43, 24, 24);
+  background-color: aqua;
+  display: flex;
+  align-items: stretch;
 }
 
 @media (max-width: 600px) {

@@ -1,19 +1,13 @@
-import {greetBlock, formUserLogin, greeting, header, inputUserLogin, chatBlockWrapper, container, byebye, blockAskLoginFilling, inputMessage, messages} from './app.js';
+import {greetBlock, formUserLogin, greeting, header, inputUserLogin, chatBlockWrapper, container, byebye, blockAskLoginFilling, inputMessage, messages, checkbox} from './app.js';
 import { createNewConnection, socket } from './ws.js';
 import { Obj } from './script';
-//  export class Obj {
-//   constructor(type, username, message) {
-//     this.type = type;
-//     this.payload = { username, message };
-//   }
-// }
 
 export function checkLocalStorage() {
   if (localStorage.getItem('username')) {
   greetBlock.style.display = "block";
   formUserLogin.style.display = "none";  
-    greeting.textContent = `Добро пожаловать, ${localStorage.getItem('username')}`;
-    header.style.display = 'none';
+  greeting.textContent = `Добро пожаловать, ${localStorage.getItem('username')}`;
+  header.style.display = 'none';
   }
 }
 
@@ -41,7 +35,7 @@ export function writeUsernameToLocalStorage() {
 export function askLoginFilling() {
   byebye.style.display = 'none';
   blockAskLoginFilling.style.display = 'block';
-  blockAskLoginFilling.textContent = "Вы не ввели имя! А придется!";
+  blockAskLoginFilling.textContent = "You should enter The Name!";
 }
 
 export function userExit() {
@@ -64,7 +58,7 @@ export function exitFromChat() {
 }
 
 export function closeSocket() {
-  let msgCloseSocket = new Obj("message", "", "Ви вышла");
+  let msgCloseSocket = new Obj("message", "", `${localStorage.getItem('username')} вышел`);
   socket.send(JSON.stringify(msgCloseSocket));
   setTimeout(() => {socket.close(1000, "работа закончена")
   }, 5000);
@@ -72,14 +66,26 @@ export function closeSocket() {
 }
 
 export function sendMsg() {
-  let newMsg = new Obj("message", "Ви", `${inputMessage.value}`);
-  
+  let newMsg = new Obj("message", `${localStorage.getItem('username')}`, `${inputMessage.value}`);
   if (socket.readyState == 1) {
-    socket.send(JSON.stringify(newMsg));
+  socket.send(JSON.stringify(newMsg));
   } else {
-    let p4 = document.createElement('p');
-    p4.textContent = "Соединение не установлено, залогиньтесь";
-    messages.append(p4);
+  reportNoConnection();
   }
+}
+
+function reportNoConnection() {
+  let p4 = document.createElement('p');
+  p4.textContent = "Соединение не установлено, залогиньтесь";
+  messages.append(p4);
+}
+
+export function checkCheckbox() {
+if (checkbox.checked) {
+  createNewConnection();
+	}
+	else {
+	reportNoConnection();
+	}
 }
  

@@ -8,9 +8,9 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[contenthash].js',
-        clean: true,
+        filename: '[name].[contenthash].js'
   },
+    
   devtool: 'inline-source-map',
   devServer: {
     static: path.resolve(__dirname, 'dist'),

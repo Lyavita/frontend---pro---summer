@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-<!-- <script src="ws.js" defer></script>
-    <script src="function.js" defer></script>
-    <script src="script.js" defer></script>
-    <script src="app.js" defer></script> -->
-    
-    <!-- <link rel="stylesheet" href="style.css" /> -->
   </head>
 
   <body>
@@ -27,25 +21,24 @@
       <form id="form-login" name="form" method="post" action="input.php">
         <div id="input-auth">
           <label for="input-nikname">YOUR NAME, PLEASE:</label>
-          <input id="input-nikname" type="text" />
+          <input id="input-nikname" name = "nikname" type="text" />
         </div>
         <input id="btn-login" type="button" value="LOGIN.." />
       </form>
     </div>
+
     <div id="wrapper-chat-block">
       <div id="chat-block">
         <div id="users-block"></div>
         <div id="messages-block"></div>
         <div id="write-message-block">
-          <input id="input-message" type="text" />
-          <input id="btn-send-message" type="button" value="SEND" />
+          <textarea id="input-message" name="msg"></textarea>
+          <div id="btn-send-message"><span>SEND</span></div>
         </div>
+      <div id="function-btn">
+        <div id="btn-checkbox"><input type="checkbox" id="checkbox" /><span>For AutoReload</span></div>
+        <div id="btn-exit-user-from-chat">EXIT</div>
+        <div id="btn-reload-user">RELOAD</div>
       </div>
-      <div id="bbb">
-        <input type="checkbox" id="checkbox_check" />
-        <input id="btn-exit-user-from-chat" type="button" value="EXIT" />
-        <input id="btn-reload-user" type="button" value="RELOAD" />
-      </div>
-    </div>
   </body>
 </html>
