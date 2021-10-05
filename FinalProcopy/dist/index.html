@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  <script defer src="main.b63e517ed60085f7154c.js"></script></head>
+
+  <body>
+    <div id="container">
+      <div id="block-ask-login-filling" class="block"></div>
+      <div id="greet-block" class="block">
+        <div id="greet"></div>
+        <input id="btn-exit-user" class = 'btn' type="button" value="EXIT" />
+        <input id="btn-enter-chat" class = 'btn' type="button" value="ENTER" />
+      </div>
+      <header id="header">CHAT</header>
+      <div id="byebye" class="block"></div>
+
+      <form id="form-login" name="form" method="post" action="input.php">
+        <div id="input-auth">
+          <label id="label-input-nikname" for="input-nikname">YOUR NAME, PLEASE:</label>
+          <input id="input-nikname" name = "nikname" type="text" />
+        </div>
+        <input id="btn-login" class = 'btn' type="button" value="LOGIN.." />
+      </form>
+    </div>
+
+    <div id="wrapper-chat-block">
+      <div id="chat-block">
+        <div id="users-block"></div>
+        <div id="messages-block"></div>
+        <div id="write-message-block">
+          <textarea id="input-message" name="msg"></textarea>
+          <div id="btn-send-message" class = 'btn'><span>SEND</span></div>
+        </div>
+      <div id="function-btn">
+        <div id="btn-checkbox" class = 'btn'><input type="checkbox" id="checkbox" /><span>For AutoReload</span></div>
+        <div id="btn-exit-user-from-chat" class = 'btn'>EXIT</div>
+        <div id="btn-reload-user" class = 'btn'>RELOAD</div>
+      </div>
+  </body>
+</html>
