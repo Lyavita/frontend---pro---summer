@@ -36,7 +36,7 @@ export const btnReloadUser = document.getElementById('btn-reload-user');
 btnUserLogin.addEventListener("click", myFunstion.checkLoginFilling);
 btnUserExit.addEventListener('click', myFunstion.userExit);
 btnEnterChat.addEventListener('click', myFunstion.goToChat);
-btnReloadUser.addEventListener('click', () => createNewConnection(ttt));
+btnReloadUser.addEventListener('click', createNewConnection);
 btnSendMessage.addEventListener('click', myFunstion.sendMsg);
 btnExitFromChat.addEventListener('click', myFunstion.closeSocket);
 

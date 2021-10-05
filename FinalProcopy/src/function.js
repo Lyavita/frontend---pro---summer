@@ -6,17 +6,17 @@ export function checkLocalStorage() {
   if (localStorage.getItem('username')) {
   greetBlock.style.display = "block";
   formUserLogin.style.display = "none";  
-  greeting.textContent = `Добро пожаловать, ${localStorage.getItem('username')}`;
+  greeting.textContent = `Hi, ${localStorage.getItem('username')}`;
   header.style.display = 'none';
   }
 }
 
 export function checkLoginFilling() {
-  checkCorrectLogin() ? writeUsernameToLocalStorage() : askLoginFilling();
+  checkNotEmptyField(inputUserLogin) ? writeUsernameToLocalStorage() : askLoginFilling();
 }
 
-export function checkCorrectLogin() {
-  if (inputUserLogin.value == "") {
+export function checkNotEmptyField(inputField) {
+  if (inputField.value == "") {
   return 0;
   } else {
   return 1; }
@@ -26,10 +26,11 @@ export function writeUsernameToLocalStorage() {
   byebye.style.display = 'none';
   blockAskLoginFilling.style.display = 'none';
   greetBlock.style.display = "block";
-  formUserLogin.style.display = "none"; 
+  formUserLogin.style.display = "none";
+  header.style.display = "none";
   localStorage.setItem('username', `${inputUserLogin.value}`);
   inputUserLogin.value = "";
-  greeting.textContent = `Добро пожаловать, ${localStorage.getItem('username')}`;
+  greeting.textContent = `Hi, ${localStorage.getItem('username')}`;
 }
 
 export function askLoginFilling() {
@@ -40,10 +41,10 @@ export function askLoginFilling() {
 
 export function userExit() {
   byebye.style.display = 'block';
+  formUserLogin.style.display = 'block';
   byebye.textContent = `Byebye, ${localStorage.getItem('username')}`;
   greetBlock.style.display = "none";
   localStorage.clear();
-  formUserLogin.style.display = 'block';
 }
 
 export function goToChat() {
@@ -78,6 +79,7 @@ function reportNoConnection() {
   let p4 = document.createElement('p');
   p4.textContent = "Соединение не установлено, залогиньтесь";
   messages.append(p4);
+  inputMessage.value = "";
 }
 
 export function checkCheckbox() {
